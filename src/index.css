@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ .fon{   
+font-family: 'Dancing Script', cursive;
+font-family: 'Poppins', sans-serif;
+ }
+  
+.bg-img{
+    background-image:url(./assets/rtr.jpg) ;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    opacity:0.6;
+}
+.bg-img2{
+    background-image:url(./assets/pudina-pata-mint-leaves-10-gm-100-gm.jpg) ;
+    width: 300px;
+    height:200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+   
+}
+.bg-img3{
+    background-image:url(./assets/pudina-pata-mint-leaves-10-gm-100-gm.jpg) ;
+    width: 400px;
+    height:90px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+   
+}
+.bg-img4{
+    background-image:url(https://i.ibb.co/QQvFVRR/download-18.jpg) ;
+    background-repeat: repeat;
+ 
+   
+}
+.bg-img5{
+    background-image:url(https://i.ibb.co/JQQgGkH/man-key-near-computer-account-260nw-1499141258.webp) ;
+    background-repeat: repeat;
+  
+}
+.bg-pic{
+    background-image:url(https://i.ibb.co/9b019S2/download-2.png) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+opacity: 0.5;
+}
