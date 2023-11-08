@@ -11,7 +11,7 @@ const AllBlog = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
    
   const getBlogs = async()=>{
-    const res = await axios.get('http://localhost:3000/blogs')
+    const res = await axios.get('http://localhost:3000/blogs',{withCredentials:true})
     console.log(res);
 
    return res

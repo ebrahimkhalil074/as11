@@ -1,11 +1,17 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Blog = ({blog}) => {
-    const{image,short_dis,title,category,_id}=blog
+  const {user} =useContext(AuthContext)
+    const{image,short_dis,title,category,_id,}=blog
 
     const handelWishlist =()=>{
+      const blog ={
+        image,short_dis,title,category,_id, email:user?.email
+      }
       fetch("http://localhost:3000/wishes",{
             method: "POST",
             headers: {

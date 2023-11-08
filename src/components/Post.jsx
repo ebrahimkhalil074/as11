@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const Post = ({post}) => {
@@ -8,7 +9,31 @@ const Post = ({post}) => {
 
     const {user}=useContext(AuthContext)
   
+    const handelWishlist =()=>{
+      const blog ={
+        image,short_dis,title,category,_id, email:user?.email
+      }
+      fetch("http://localhost:3000/wishes",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(blog)
+         }) 
+        .then(res => res.json())
+        .then(data =>{
+           console.log(data);
+           if (data.acknowledged=== true) {
+            Swal.fire({
+              icon: 'success',
+              title: 'success full...',
+              text: 'Your Blog Stored WishList successfully!',
+            })
+           }
+           
+        })
 
+}
 
     return (
         <div >
@@ -42,7 +67,7 @@ const Post = ({post}) => {
   </div>
   <div className="flex gap-4">
       <Link to={`/blogdetails/${_id}`}><button className="btn w-full bg-sky-400">Details</button></Link>
-      <button className="btn bg-sky-400 flex-1">Wish List</button>
+      <button onClick={handelWishlist} className="btn bg-sky-400 flex-1">Wish List</button>
       </div>
   </div>
 

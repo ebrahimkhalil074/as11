@@ -6,12 +6,12 @@ import ReactTable from '../components/RcactTable'
 
 const FeaturedBlogs = () => {
     const [tableData, setTableData] = useState([]);
-
+const[sliceData,setSliceData]=useState(10)
     useEffect(() => {
       // Fetch data from the API
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://localhost:3000/blogs'); // Replace with your API endpoint
+          const response = await axios.get('http://localhost:3000/blogs/length'); // Replace with your API endpoint
           setTableData(response.data); // Assuming the API response is an array of data
         } catch (error) {
           console.error('Error fetching data: ', error);
@@ -20,7 +20,9 @@ const FeaturedBlogs = () => {
   
       fetchData();
     }, []); //
-const data =React.useMemo(()=>tableData,[tableData]);
+    const ff=tableData.slice(0,sliceData)
+    console.log(ff);
+const data =React.useMemo(()=>ff,[ff]);
 const columns =React.useMemo(()=>[
     {
         Header: 'Blog Title',
@@ -28,7 +30,7 @@ const columns =React.useMemo(()=>[
       },
       {
         Header: 'Blog Owner',
-        accessor: 'category', // 'age' should match the key in your data
+        accessor: 'name', // 'age' should match the key in your data
       },
       
       {

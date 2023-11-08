@@ -6,6 +6,7 @@ import {  } from "react-icons/bi";
 import { FcList } from "react-icons/fc";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import axios from "axios";
 // import { VscSignIn } from "react-icons/vsc";
 
 
@@ -14,14 +15,21 @@ const Navbar = () => {
   console.log(user);
 const handeldelete=()=>{
   logout()
+  .then((result) => {
+    console.log(result);
+    axios.post('http://localhost:3000/logout',user,{withCredentials:true})
+    .then(res =>console.log(res.data))
+  }).catch((error) => {
+    console.log(error);
+  });
 }
 
     const navLinks=<div className='flex gap-4'>
     <li><NavLink to='/'> <AiFillHome className="text-sky-400" />Home</NavLink></li>
     <li><NavLink to='/addBlog'> <IoIosCreate className="text-sky-400" /> Add Blog</NavLink></li>
     <li><NavLink to='/allBlog'><FcList className="text-sky-400"/> All Blog</NavLink></li>
-    <li><NavLink to='/featuredBlog'>< TbArticleFilledFilled className="text-sky-400"/> Featured Blog</NavLink></li>
-    <li><NavLink to='/wishlist'>< IoMdListBox className="text-sky-400"/> Wishlist</NavLink></li>
+     <li><NavLink to='/featuredBlog'>< TbArticleFilledFilled className="text-sky-400"/> Featured Blog</NavLink></li>
+   {user?.email && <li><NavLink to='/wishlist'>< IoMdListBox className="text-sky-400"/> Wishlist</NavLink></li>}
     <li><NavLink to='/signIn'>< TbLogin2 className="text-sky-400"/> Sign In</NavLink></li>
     <li><NavLink to='/signUp'> < TbLogin2 className="text-sky-400"/>Sign Up</NavLink></li>
         </div>

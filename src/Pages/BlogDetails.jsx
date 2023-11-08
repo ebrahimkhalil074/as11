@@ -9,21 +9,25 @@ import Blog2 from "../components/Blog2";
 
 const BlogDetails = () => {
 const [com,setCom] =useState([])
+console.log(com);
     const {user}=useContext(AuthContext)
-   
+   const{displayName,photoURL}=user
     const loader =useLoaderData()
     console.log(loader);
 //
 const getBlogs =()=>{
-    const res =axios.get('http://localhost:3000/blogs')
+    const res =axios.get('http://localhost:3000/blogs',{withCredentials:true})
    return res
     }
    
   const {isLoading,isError,data,refetch,} = useQuery({ queryKey: ['blogs'], queryFn: getBlogs })
 
-
+useEffect(()=>{
+axios(`http://localhost:3000/blogs/${loader._id}`,{credentials:"include"})
+.then(res => console.log(res.data?.data))
+},[])
 //
-const { title,category,s_dis,long_dis,image,time,blog_email,date,_id:id,pic}=loader||{}
+const {name, title,category,s_dis,long_dis,image,time,blog_email,date,_id:id,pic}=loader||{}
 //
 
 
@@ -80,9 +84,9 @@ console.log(blog_email,user?.email);
   <div className="flex items-center justify-between p-6">
    <div className="flex gap-4 items-center">
    <img className="w-[100px] h-[100px] rounded-[50%]" src={pic} alt="" />
-   <h1>{user?.displayName}</h1>
+   <h1 className="text-2xl font-bold">{name}</h1>
    </div>
-    <p className="block font-sans text-base antialiased font-normal leading-relaxed text-inherit">
+    <p className="block  font-sans text-xl antialiased font-normal leading-relaxed text-inherit">
     {date}
     </p>
   </div>
@@ -93,22 +97,22 @@ console.log(blog_email,user?.email);
    <h1 className="text-3xl font-bold text-sky-500">comment</h1>
 <textarea className="textarea textarea-success w-full"name="text" placeholder="your comment please"></textarea>
 {
-  blog_email !== user?.email ? <button type="submit" className="btn" >Submit</button>:<Link to={`/update/${id}`}>:<button type="" className="btn">Update</button></Link>
+  blog_email !== user?.email ? <button type="submit" className="btn btn-success" >Submit</button>:<Link to={`/update/${id}`}>:<button type="" className="btn btn-success">Update</button></Link>
   
 }
 {/* {
  blog_email && user?.email ? :'' 
 } */}
    </form>
-   <div className="h-80">
+   <div className="">
    {
-    come.map((montobo,i)=> <div className="w-full h-[150px] flex gap-4 " key={i}>
-<div>
+    come.map((montobo,i)=> <div className="w-full  flex gap-4 mt-6" key={i}>
+<div className="p-4 ">
 <img className="h-[70px] w-[100px] rounded-[50%]" src={montobo?.photoURL} alt="" />
 </div>
-<div>
-  <h1>{montobo?.displayName}</h1>
-  <h1>{montobo?.text}</h1>
+<div  className=" bg-white shadow-2xl px-2 rounded-[20%] flex flex-col  justify-center">
+  <h1 className="text-2xl font-semibold">{montobo?.displayName}</h1>
+  <h1 className="text-xl text-left">{montobo?.text}</h1>
 </div>
     </div>)
    }
