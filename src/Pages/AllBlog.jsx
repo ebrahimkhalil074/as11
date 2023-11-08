@@ -46,7 +46,7 @@ const handletitleChange = (e) => {
            <Slider img={data?.data[0]?.image}img1={data?.data[1]?.image} img2={data?.data[2]?.image} img3={data?.data[4]?.image} img4={data?.data[7]?.image} img5={data?.data[9]?.image}></Slider> 
           <div className="flex flex-col gap-10">
           <div className="flex gap-4 flex-wrap border-2 font-bold text-2xl justify-between">
-          <select  value={selectedCategory} onChange={handleCategoryChange}>
+         <select    value={selectedCategory} onChange={handleCategoryChange}>
         <option value="Science & Technology">Science & Technology</option>
         <option value="Health & Wellness">Health & Wellness</option>
         <option value="Lifestyle & Gardening">Lifestyle & Gardening</option>

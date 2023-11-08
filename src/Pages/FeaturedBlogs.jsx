@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ReactTable from '../components/RcactTable'
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import Skleton from '../components/Skeketon';
 
 
 const FeaturedBlogs = () => {
@@ -52,11 +54,20 @@ const columns =React.useMemo(()=>[
 
   return (
     <div>
+      
     {tableData.length > 0 ? (
       <ReactTable columns={columns} data={data} />
     ) : (
-      <p>Loading or no data available...</p>
+   <div className='flex flex-wrap'>
+    <Skleton></Skleton>
+    <Skleton></Skleton>
+    <Skleton></Skleton>
+    <Skleton></Skleton>
+    <Skleton></Skleton>
+    <Skleton></Skleton>
+   </div>
     )}
+    
   </div>
   );
     }

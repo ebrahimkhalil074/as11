@@ -5,6 +5,7 @@ import Blog from "../components/Header/Blog";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import Blog2 from "../components/Blog2";
+import Skeleton from "react-loading-skeleton";
 
 
 const BlogDetails = () => {
@@ -74,11 +75,10 @@ console.log(blog_email,user?.email);
     />
   </div>
   <div className="p-6">
-    <h4 className="block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-      Category:{category}
-    </h4>
+   <h4 className="block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+    Category:{category} </h4>
     <p className="block mt-3 font-sans text-xl antialiased font-normal leading-relaxed text-gray-700">
-      Description:{long_dis}
+      Description:{long_dis} 
     </p>
   </div>
   <div className="flex items-center justify-between p-6">
@@ -87,7 +87,7 @@ console.log(blog_email,user?.email);
    <h1 className="text-2xl font-bold">{name}</h1>
    </div>
     <p className="block  font-sans text-xl antialiased font-normal leading-relaxed text-inherit">
-    {date}
+    {date} <Skeleton />
     </p>
   </div>
 

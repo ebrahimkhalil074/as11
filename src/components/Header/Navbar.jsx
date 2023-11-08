@@ -7,6 +7,7 @@ import { FcList } from "react-icons/fc";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
+import icon from '../../assets/1.jpg'
 // import { VscSignIn } from "react-icons/vsc";
 
 
@@ -45,7 +46,8 @@ const handeldelete=()=>{
         {navLinks}
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+  <img className="w-[100px] h-16" src={'https://i.ibb.co/Y7MbYJs/R-11.jpg'} alt="" />
+  <h3 className="text-2xl"><img className="w-[200px] "src={icon}/>Chronicles</h3>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
