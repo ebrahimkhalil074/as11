@@ -4,7 +4,7 @@ const Revew = () => {
     return (
         <div>
           <h1 className="text-4xl font-bold text-center"> Blog Review</h1>
-            <div className="flex gap-5 sm:flex-col">
+            <div className="flex gap-5 sm:flex-col md:flex-row lg:flex-row">
 <div className="card bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
     <img src={'https://i.ibb.co/9rqWwqS/116521839-800232863715149-6729636571760715521-n.jpg'} alt="Shoes" className="rounded-xl" />
