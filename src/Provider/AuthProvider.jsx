@@ -38,7 +38,7 @@ const createUser = (email, password) => {
 const user ={user:currentUser?.email}
       if(currentUser) {
 //  console.log(loguser);
-        axios.post('https://blog-11-server-4bvi9ocsf-md-ebrahim-khalils-projects.vercel.app/jwt',user,{withCredentials:true})
+        axios.post('https://ebrahim-blog0987665.vercel.app/jwt',user,{withCredentials:true})
         .then(res =>console.log(res.data))
       }
     });
