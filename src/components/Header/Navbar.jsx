@@ -18,7 +18,7 @@ const handeldelete=()=>{
   logout()
   .then((result) => {
     console.log(result);
-    axios.post('http://localhost:3000/logout',user,{withCredentials:true})
+    axios.post('https://blog-11-server-4bvi9ocsf-md-ebrahim-khalils-projects.vercel.app/logout',user,{withCredentials:true})
     .then(res =>console.log(res.data))
   }).catch((error) => {
     console.log(error);

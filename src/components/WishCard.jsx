@@ -25,7 +25,7 @@ Swal.fire({
         icon: "success"
       });
 
-      axios.delete(`http://localhost:3000/wishes/${_id}`)
+      axios.delete(`https://ebrahim-blog0987665.vercel.app/wishes/${_id}`)
       .then(response => {
         console.log(`Deleted post with ID ${_id}`);
         refetch()

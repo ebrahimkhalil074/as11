@@ -24,7 +24,7 @@ const blog ={
  name, title,category,short_dis,long_dis,image,time,blog_email,date,pic
 }
 console.log(blog);
-fetch(`http://localhost:3000/blogs`,{
+fetch(`https://ebrahim-blog0987665.vercel.app/blogs`,{
   method: "POST",
   headers: {
       "Content-Type": "application/json",

@@ -17,14 +17,14 @@ console.log(com);
     console.log(loader);
 //
 const getBlogs =()=>{
-    const res =axios.get('http://localhost:3000/blogs',{withCredentials:true})
+    const res =axios.get('https://ebrahim-blog0987665.vercel.app/blogs',{withCredentials:true})
    return res
     }
    
   const {isLoading,isError,data,refetch,} = useQuery({ queryKey: ['blogs'], queryFn: getBlogs })
 
 useEffect(()=>{
-axios(`http://localhost:3000/blogs/${loader._id}`,{credentials:"include"})
+axios(`https://ebrahim-blog0987665.vercel.app/blogs/${loader._id}`)
 .then(res => console.log(res.data?.data))
 },[])
 //
@@ -37,7 +37,7 @@ const handelCommentPost=(e)=>{
     const form =e.target
     const text = form.text.value 
 const comment={text,photoURL,displayName,id}
-    fetch(`http://localhost:3000/comment`,{
+    fetch(`https://ebrahim-blog0987665.vercel.app/comment`,{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const comment={text,photoURL,displayName,id}
 ////////////////////
 
 useEffect(()=>{
-   axios(`http://localhost:3000/comment`)
+   axios(`https://ebrahim-blog0987665.vercel.app/comment`,{withCredentials:true})
     .then( res=>setCom(res.data))
    
 

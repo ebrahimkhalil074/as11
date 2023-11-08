@@ -5,7 +5,7 @@ const RecentPosts = () => {
 const [data,setData]=useState()
 const [dataLength,setDataLength]=useState(6)
     useEffect(()=>{
-fetch('http://localhost:3000/blogs',{credentials:"include"})
+fetch('https://ebrahim-blog0987665.vercel.app/blogs',{credentials:"include"})
 .then(res => res.json())
 .then(data =>setData(data) )
     },[])

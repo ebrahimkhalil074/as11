@@ -8,7 +8,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 const Wishlist = () => {
 const{user} =useContext(AuthContext)
     const getWish  = async()=>{
-        const res = await axios.get(`http://localhost:3000/wishes?email=${user?.email}`,{withCredentials:true})
+        const res = await axios.get(`https://ebrahim-blog0987665.vercel.app/wishes?email=${user?.email}`)
         console.log(res);
         
     

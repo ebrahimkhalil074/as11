@@ -12,7 +12,7 @@ const Blog = ({blog}) => {
       const blog ={
         image,short_dis,title,category,_id, email:user?.email
       }
-      fetch("http://localhost:3000/wishes",{
+      fetch("https://blog-11-server-4bvi9ocsf-md-ebrahim-khalils-projects.vercel.app/wishes",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

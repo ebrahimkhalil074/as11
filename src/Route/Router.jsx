@@ -43,12 +43,12 @@ const router = createBrowserRouter([
            {
              path:'/blogdetails/:id',
              element:<PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:3000/blogs/${params.id}`)
+            loader:({params})=>fetch(`https://blog-11-server-4bvi9ocsf-md-ebrahim-khalils-projects.vercel.app/blogs/${params.id}`)
            },
    {
     path:"/update/:id",
     element:<PrivateRoute><Update></Update></PrivateRoute>,
-    loader:({params})=>fetch(`http://localhost:3000/blogs/${params.id}`,{credentials:"include"})
+    loader:({params})=>fetch(`https://blog-11-server-4bvi9ocsf-md-ebrahim-khalils-projects.vercel.app/blogs/${params.id}`,{credentials:"include"})
    }
       ]
     },

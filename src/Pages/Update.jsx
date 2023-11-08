@@ -32,7 +32,7 @@ const blog_email=user?.auth?.currentUser?.email;
 // console.log(blog);
 const updateBlog ={ name, title,category,short_dis,long_dis,image,time,blog_email,date,pic}
  console.log(updateBlog);      
-fetch(`http://localhost:3000/blogs/${loader._id}`,{
+fetch(`https://ebrahim-blog0987665.vercel.app/blogs/${loader._id}`,{
    method: "PUT",
    headers: {
        "Content-Type": "application/json",
