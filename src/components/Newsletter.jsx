@@ -13,7 +13,7 @@ const Newsletter = () => {
     }
     return (
         
-        <div className="flex ">
+        <div className="flex flex-col md:flex-row lg:flex-row">
         <div className="flex-1">
           <img className="w-full h-full" src={"https://i.ibb.co/r6vztfQ/images-10.jpg"} alt="" />  
         </div>

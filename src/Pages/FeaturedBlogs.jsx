@@ -13,7 +13,7 @@ const[sliceData,setSliceData]=useState(10)
       // Fetch data from the API
       const fetchData = async () => {
         try {
-          const response = await axios.get('https://blog-11-server-4bvi9ocsf-md-ebrahim-khalils-projects.vercel.app/blogs/length',{withCredentials:true}); // Replace with your API endpoint
+          const response = await axios.get('https://ebrahim-blog0987665.vercel.app/blogs/length',{withCredentials:true}); // Replace with your API endpoint
           setTableData(response.data); // Assuming the API response is an array of data
         } catch (error) {
           console.error('Error fetching data: ', error);

@@ -26,7 +26,7 @@ const getBlogs =()=>{
 useEffect(()=>{
 axios(`https://ebrahim-blog0987665.vercel.app/blogs/${loader._id}`)
 .then(res => console.log(res.data?.data))
-},[])
+},[loader._id])
 //
 const {name, title,category,s_dis,long_dis,image,time,blog_email,date,_id:id,pic}=loader||{}
 //
