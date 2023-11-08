@@ -3,6 +3,7 @@ import Newsletter from "../components/Newsletter";
 import RecentPosts from "../components/RecentPosts";
 import Revew from "../components/Revew";
 import Slider from "../components/Slidder";
+import Footer from "./Footer";
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
            <RecentPosts></RecentPosts>
            <Newsletter></Newsletter>
            <Revew></Revew>
+           <Footer></Footer>
         </div>
     );
 };
